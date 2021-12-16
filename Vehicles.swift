@@ -19,6 +19,8 @@ public class Vehicle {
 
   private var speedChange: Int
 
+  private let wheels: Int = 4
+
   /**
   * Base initializer.
   */
@@ -48,6 +50,10 @@ public class Vehicle {
   func brake() -> Int {
     speed = 0
     return speed
+  }
+
+  func getWheels() -> Int {
+    return wheels
   }
 }
 
@@ -80,6 +86,11 @@ class Bike: Vehicle {
   */
   func getCadence() -> Int {
     return cadence
+  }
+
+  func bikeWheels() {
+    bikeWheel = super.getWheels()
+    return bikeWheel / 2
   }
 }
 
@@ -145,6 +156,10 @@ class Truck: Vehicle {
   */
   func getColor() -> String {
     return colour
+  }
+
+  func truckWheels() -> Int {
+    return super.getWheels()
   }
 }
 
