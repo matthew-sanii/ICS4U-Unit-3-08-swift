@@ -61,6 +61,8 @@ class Bike: Vehicle {
 
   private var cadence: Int = 1
 
+  private var bikeWheel: Int = 0
+
   /**
   * ringBell method, which returns a Ding! string.
   *
@@ -88,9 +90,14 @@ class Bike: Vehicle {
     return cadence
   }
 
-  func bikeWheels() {
-    bikeWheel = super.getWheels()
-    return bikeWheel / 2
+  /**
+  * The bikeWheels method.
+  *
+  * @return number of wheels bike has.
+  */
+  func bikeWheels() -> Int {
+    bikeWheel = super.getWheels() / 2
+    return bikeWheel
   }
 }
 
@@ -158,6 +165,11 @@ class Truck: Vehicle {
     return colour
   }
 
+  /**
+  * The truckWheels method.
+  *
+  * @return number of wheels the truck has.
+  */
   func truckWheels() -> Int {
     return super.getWheels()
   }
@@ -185,6 +197,8 @@ if colorInput == 0 && plateInput != 0 && startCadence != -1 {
   print("The bike's cadence is now", bike.getCadence())
   print("The truck's plate number is", truck.getPlate())
   print("The truck's color is", truck.getColor())
+  print("The bike has", bike.bikeWheels(), "wheels.")
+  print("The truck has", truck.truckWheels(), "wheels.")
 } else {
   print("You must input strings for truck color and plate number, and int for bike cadence.")
 }
